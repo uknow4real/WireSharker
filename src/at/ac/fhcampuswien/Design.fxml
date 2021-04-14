@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="at.ac.fhcampuswien.Controller">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="142.0" minWidth="10.0" prefWidth="140.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="300.0" minWidth="10.0" prefWidth="215.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="140.0" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="179.0" minHeight="10.0" prefHeight="95.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="324.0" minHeight="0.0" prefHeight="41.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="324.0" minHeight="0.0" prefHeight="36.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="346.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="324.0" minHeight="10.0" prefHeight="82.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="416.0" minHeight="10.0" prefHeight="165.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="416.0" minHeight="10.0" prefHeight="86.0" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <ImageView fitHeight="100.0" fitWidth="316.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+         <image>
+            <Image url="@WiresharkerLogo.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="server" prefHeight="20.0" prefWidth="195.0" promptText="Host Name/Server Address" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+      <Text stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Port Range:" textAlignment="CENTER" wrappingWidth="132.2607421875" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+         <font>
+            <Font name="System Italic" size="16.0" />
+         </font>
+         <GridPane.margin>
+            <Insets top="4.0" />
+         </GridPane.margin>
+      </Text>
+      <ComboBox fx:id="popUp" prefHeight="28.0" prefWidth="158.0" visible="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets bottom="10.0" />
+         </GridPane.margin>
+      </ComboBox>
+      <TextField fx:id="startPort" prefHeight="28.0" prefWidth="200.0" promptText="Start" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.valignment="TOP">
+         <GridPane.margin>
+            <Insets top="7.0" />
+         </GridPane.margin>
+      </TextField>
+      <TextField fx:id="endPort" prefHeight="28.0" prefWidth="200.0" promptText="End" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="4" GridPane.valignment="BOTTOM">
+         <GridPane.margin>
+            <Insets bottom="10.0" />
+         </GridPane.margin>
+      </TextField>
+      <CheckBox fx:id="predef" alignment="CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#handlePreDef" prefHeight="32.0" prefWidth="96.0" text="Pre-Defined" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <CheckBox fx:id="individual" contentDisplay="TOP" mnemonicParsing="false" onAction="#handleIndividual" prefHeight="18.0" prefWidth="88.0" text="Individual" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3" GridPane.valignment="CENTER" />
+      <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+         <children>
+            <TextArea fx:id="yourLog" editable="false" prefHeight="165.0" prefWidth="250.0" />
+         </children>
+         <padding>
+            <Insets left="93.0" right="93.0" />
+         </padding>
+      </VBox>
+      <Button fx:id="reset" mnemonicParsing="false" onAction="#resetClicked" prefHeight="35.0" prefWidth="75.0" text="Reset" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets bottom="14.0" />
+         </GridPane.margin></Button>
+      <Button fx:id="scan" mnemonicParsing="false" onAction="#scanClicked" prefHeight="35.0" prefWidth="75.0" text="Scan" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="6" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets bottom="14.0" />
+         </GridPane.margin></Button>
+   </children>
+</GridPane>
